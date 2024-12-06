@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FinRiskManager.Business\FinRiskManager.Business.csproj" />
+    <ProjectReference Include="..\FinRiskManager.Data\FinRiskManager.Data.csproj" />
+  </ItemGroup>
+
 </Project>
