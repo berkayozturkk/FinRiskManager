@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FinRiskManager.Data.Implementations
 {
-    internal class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly BaseDbContext _context;
         private readonly DbSet<T> _dbSet;
