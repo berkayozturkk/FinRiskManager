@@ -9,6 +9,7 @@ namespace FinRiskManager.Business.Interfaces
 {
     public interface IUserService
     {
+        Task<UserDto> Authenticate(string username, string password);
         Task<IEnumerable<UserDto>> GetAllUsersAsync();
         Task<UserDto> GetUserByIdAsync(string id);
         Task<bool> CreateUserAsync(UserDto user);

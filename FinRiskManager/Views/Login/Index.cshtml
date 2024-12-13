@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;  // Layout dosyasını devre dışı bırakıyoruz
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Genel body stili */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #56ccf2, #2f80ed); /* Gradient arka plan */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login formunun kapsayıcı alanı */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        /* Login formu */
+        .login-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;  /* Form genişliğini daraltıyoruz */
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Başlık stili */
+        .login-box h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Input alanları */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        /* Focus durumunda input'lar */
+        .input-group input:focus {
+            border-color: #56ccf2;
+            outline: none;
+        }
+
+        /* Login butonunun stili */
+        .btn {
+            border-radius: 10px;
+            font-size: 18px;
+            padding: 12px;
+            background-color: #56ccf2;
+            border: none;
+            color: white;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Button hover efekti */
+        .btn:hover {
+            background-color: #2f80ed;
+        }
+
+        /* Formun altında yazan bağlantı */
+        .login-box p {
+            margin-top: 20px;
+        }
+
+        .login-box p a {
+            color: #56ccf2;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>FinRisk Managament</h2>
+            <form method="post" asp-controller="Login" asp-action="Login">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

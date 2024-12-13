@@ -12,7 +12,7 @@ namespace FinRiskManager.Data.Implementations
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly BaseDbContext _context;
+        protected readonly BaseDbContext _context;
         private readonly DbSet<T> _dbSet;
 
         public GenericRepository(BaseDbContext context)
