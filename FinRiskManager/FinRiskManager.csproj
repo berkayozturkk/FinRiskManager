@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinRiskManager.Business\FinRiskManager.Business.csproj" />
-    <ProjectReference Include="..\FinRiskManager.Data\FinRiskManager.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,6 +4,7 @@
     {
         public string TenantId { get; set; }
         public string AgreementName { get; set; }
+        public string AgreementDate { get; set; }
         //public string AgreementDetails { get; set; }
 
         public Tenant Tenant { get; set; }

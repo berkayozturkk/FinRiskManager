@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="FinRiskManager.Business">
+      <HintPath>..\FinRiskManager.Business\bin\Debug\net8.0\FinRiskManager.Business.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+
 </Project>
