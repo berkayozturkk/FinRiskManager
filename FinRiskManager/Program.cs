@@ -17,6 +17,9 @@ builder.Services.AddDbContext<BaseDbContext>(options =>
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<IAgreementService, AgreementService>();
+builder.Services.AddScoped<IAgreementRepository, AgreementRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
