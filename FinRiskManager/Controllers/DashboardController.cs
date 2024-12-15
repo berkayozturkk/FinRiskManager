@@ -21,7 +21,8 @@ namespace FinRiskManager.Controllers
         [HttpGet("GetAgreementsWith")]
         public async Task<IActionResult> GetAgreementsWith()
         {
-            string tenantId = "test";
+            string tenantId = HttpContext.Session.GetString("TenantId");
+
             var agreements = await _agreementService.GetAgreementsWithRiskByTenantIdAsync(tenantId);
             return Ok(agreements);
         }
