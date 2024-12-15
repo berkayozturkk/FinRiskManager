@@ -33,8 +33,8 @@ namespace FinRiskManager.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid username or password.");
                 return View();
             }
+
             // Kullanıcı doğrulandıysa tenantId'yi session'a veya başka bir yere kaydedebiliriz.
-            // Örnek olarak session'a kaydediyoruz
             //HttpContext.Session.SetString("TenantId", user.TenantId.ToString());
 
             // Başarılı giriş sonrası yönlendirme
