@@ -1,8 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to the Dashboard</h1>
+    <p>View risk analyses and financial data related to agreements.</p>
 </div>
+
+<div id="agreementsContainer">
+    <button id="loadAgreementsBtn" class="btn btn-primary">Load Agreements</button>
+    <table id="agreementsTable" class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Agreement Name</th>
+                <th>Agreement Date</th>
+                <th>Topic Name</th>
+                <th>Risk Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Ajax response data will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loadAgreementsBtn").click(function () {
+                // Ajax request to fetch agreements
+                $.ajax({
+                    url: '@Url.Action("GetAgreementsWithRisk", "Dashboard")', // Controller'dan ilgili action'ı çağırıyoruz
+                    method: 'GET',
+                    success: function (data) {
+                        // Veriler geldikten sonra tabloyu doldur
+                        var tableBody = $("#agreementsTable tbody");
+                        tableBody.empty(); // Eski verileri temizle
+
+                        // Dönen veri ile tabloyu doldur
+                        $.each(data, function (index, agreement) {
+                            var row = "<tr>" +
+                                "<td>" + agreement.agreementName + "</td>" +
+                                "<td>" + agreement.agreementDate + "</td>" +
+                                "<td>" + agreement.topicName + "</td>" +
+                                "<td>" + agreement.riskAmount.toFixed(2) + "</td>" +
+                                "</tr>";
+                            tableBody.append(row);
+                        });
+                    },
+                    error: function () {
+                        alert("An error occurred while fetching the data.");
+                    }
+                });
+            });
+        });
+    </script>
+}

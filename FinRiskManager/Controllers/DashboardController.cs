@@ -18,8 +18,8 @@ namespace FinRiskManager.Controllers
         }
 
         // Anlaşmaları JSON formatında döner
-        [HttpGet("GetAgreements")]
-        public async Task<IActionResult> GetAgreements()
+        [HttpGet("GetAgreementsWith")]
+        public async Task<IActionResult> GetAgreementsWith()
         {
             string tenantId = "test";
             var agreements = await _agreementService.GetAgreementsWithRiskByTenantIdAsync(tenantId);
