@@ -11,7 +11,7 @@ namespace FinRiskManager.WebAPI.Controllers
         [HttpPost("AddBusinessMatter")]
         public IActionResult AddBusinessMatter(string tenantId,string aggrementName,string tenantName,string desc)
         {
-            if (businessMatterDto == null)
+            if (tenantId == null) 
             {
                 return BadRequest("Business matter data is null.");
             }
